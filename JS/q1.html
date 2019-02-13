@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Interest Calculatio</title>
+</head>
+<body>
+
+<h1 style="color:#17603d; "> Simple Interest Calculation </h1>
+<button onclick="calculateInterest()" style="margin: 1rem;
+			background-color: #4ab28e;
+			border: 0.2rem solid #4ab28e;
+			border-radius: 0.3rem;
+  			padding: 0.2rem;
+  			color: #ffffff;
+  			font-weight: bold;">Click here to calculate</button>
+<p id="simpleInterest" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; padding: 2rem; margin: 2rem;"></p>
+<script type="text/javascript">
+	function calculateInterest()
+		{
+		var amount = prompt("Enter the amount : ");
+		var interest_rate = prompt("Enter the rate of interest : ");
+		var years = prompt("Enter the number of years : ");
+		var simpleInterest = (amount*interest_rate*years)/100;
+		document.getElementById("simpleInterest").innerHTML = "The simple interest calculated is : "+simpleInterest;
+		}
+	
+</script>
+</body>
+</html>

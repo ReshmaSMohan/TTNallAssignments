@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area Of Circle</title>
+</head>
+<body>
+<h1>Enter the radius to calculate the area</h1>
+<input id="radius" type="number" name="radius">
+<button onclick="calculateArea()" style="margin: 1rem;
+			background-color: #4ab28e;
+			border: 0.2rem solid #4ab28e;
+			border-radius: 0.3rem;
+  			padding: 0.2rem;
+  			color: #ffffff;
+  			font-weight: bold;">calculate</button>
+<article id="Area" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; padding: 2rem; margin: 2rem;"></article>
+<script type="text/javascript">
+	function calculateArea()
+	{
+		var r = document.getElementById("radius").value;
+		var area = 3.14*r*r;
+		document.getElementById("Area").innerHTML = area;
+	}
+</script>
+</body>
+</html>

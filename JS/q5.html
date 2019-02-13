@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee</title>
+	<style type="text/css">
+		button{
+			margin: 1rem;
+			background-color: #4ab28e;
+			border: 0.2rem solid #4ab28e;
+			border-radius: 0.3rem;
+  			padding: 0.2rem;
+  			color: #ffffff;
+  			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="empGrtSal()">click to see list of employees having salary greater than 5000</button>
+	<p id="empGreaterThan"></p>
+
+	<button onclick="empGrpAge()">click to group employee on the basis of their age</button>
+	<div style="display: flex; ">
+		<div id="empgrp1" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; flex: 1; padding: 0.2rem;"></div>
+		<div id="empgrp2" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; flex: 1; padding: 0.2rem"></div>
+		<div id="empgrp3" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; flex: 1; padding: 0.2rem"></div>
+	</div>
+	<button onclick="empLessSalAgeGrt()">click to see list of employees having salary less than 1000 and age greater than 20</button>
+	<p id="empLessSalAgeGrtThan"></p>
+<script type="text/javascript">
+	var employee = [{
+		"name" : "reshma s mohan",
+		"age" : "24",
+		"salary" : "15000",
+		"dob" : "31-aug-1994"
+	},
+	{
+		"name" : "pooja solanki",
+		"age" : "23",
+		"salary" : "999",
+		"dob" : "15-aug-1995"
+	},
+	{
+		"name" : "mahima gupta",
+		"age" : "22",
+		"salary" : "8000",
+		"dob" : "10-jan-1996"
+	},
+	{
+		"name" : "Anushka Mittal",
+		"age" : "23",
+		"salary" : "16000",
+		"dob" : "12-april-1995"
+	},
+	{
+		"name" : "Raghavendra",
+		"age" : "23",
+		"salary" : "4000",
+		"dob" : "12-april-1995"
+	},
+	{
+		"name" : "Ravi",
+		"age" : "9",
+		"salary" : "800",
+		"dob" : "12-april-2010"
+	},
+	{
+		"name" : "Manoj",
+		"age" : "33",
+		"salary" : "19800",
+		"dob" : "12-april-1985"
+	}
+	];
+	
+	var empGrtSal = function()
+	{
+		var names ="";
+		for(var i=0;i<employee.length;i++)
+		{
+			if(employee[i].salary>5000)
+			{	
+				//console.log(employee[i].name);
+				names += employee[i].name + '<br>';
+			}
+		}
+		document.getElementById("empGreaterThan").innerHTML = names;
+	}
+
+	var empGrpAge = function()
+	{
+		var names1 ="";
+		var names2 ="";
+		var names3 ="";
+		for(var i=0;i<employee.length;i++)
+		{
+			if(employee[i].age<=10)
+				names1 += employee[i].name + '<br>';			
+			else if(employee[i].age>10&&employee[i].age<=30)
+				names2 += employee[i].name + '<br>';
+			else if(employee[i].age>31&&employee[i].age<=50)
+				names3 += employee[i].name + '<br>';
+		}
+		document.getElementById("empgrp1").innerHTML = "Employees in grp (0-10)agr group: "+'<br>'+names1;
+		document.getElementById("empgrp2").innerHTML = "Employees in grp (11-20)agr group: "+'<br>'+names2;
+		document.getElementById("empgrp3").innerHTML = "Employees in grp (31-50)agr group: "+'<br>'+names3;
+	}
+
+	var empLessSalAgeGrt = function()
+	{
+		var names ="";
+		for(var i=0;i<employee.length;i++)
+		{
+			if(employee[i].salary<1000&&employee[i].age>10)
+			{	
+				console.log(employee[i].name);
+				console.log("Old salary: "+employee[i].salary);
+				employee[i].salary *=5;
+				console.log("Incremented salary: "+employee[i].salary);
+				names += employee[i].name + '<br>';
+			}
+		}
+		document.getElementById("empLessSalAgeGrtThan").innerHTML = names + "salary incremented by 5 times";
+	}
+</script>
+</body>
+</html>

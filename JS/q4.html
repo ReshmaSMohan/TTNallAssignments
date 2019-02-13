@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy Object</title>
+</head>
+<body>
+<script type="text/javascript">
+	var object1 = {
+		"fname" : "reshma",
+		"lname" : "mohan",
+		"group" : 7,
+		"ids" : [123,7678,8998]
+	};
+
+	var object2 = {};
+    
+    // object2=object1;
+    for(var key in object1)
+    {
+    	object2[key] = object1[key];
+    }
+    for(var key in object2)
+    {
+    	console.log(key+" "+object2[key]);
+    }
+
+</script>
+</body>
+</html>

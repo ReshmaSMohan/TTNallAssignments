@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pallindrome</title>
+</head>
+<body>
+<h1>Pallindrome Check</h1>
+<input id="word" type="text" name="pallindrome">
+<button onclick="checkPallindrome()" style="margin: 1rem;
+			background-color: #4ab28e;
+			border: 0.2rem solid #4ab28e;
+			border-radius: 0.3rem;
+  			padding: 0.2rem;
+  			color: #ffffff;
+  			font-weight: bold;">click to check</button>
+<p id="result" style="border: 0.1rem solid #a1a4a8;border-radius: 8px; padding: 2rem; margin: 2rem;"></p>
+<script type="text/javascript">
+	function checkPallindrome(){
+		var initialword = document.getElementById("word").value;		
+		var word1 = initialword.split('').join();
+		var word2 = initialword.split('').reverse().join();
+		if(word1==word2){
+			document.getElementById("result").innerHTML = "pallindrome";
+		}
+		else
+			document.getElementById("result").innerHTML = "not a pallindrome";
+	};
+</script>
+
+</body>
+</html>
