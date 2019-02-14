@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 7</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		div{
+			color: red;
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body>
+<h1>Bind a click function to an "click" element and append next "click" next to it.</h1>
+<div class="click">click element </div>
+</body>
+<script type="text/javascript">
+	$(document).ready($(".click").click(function(){
+		//	console.log("click")
+			var node =$(".click").html()
+		//	console.log(node)
+			$(".click").append(node)
+		}
+		));
+	
+</script>
+</html>

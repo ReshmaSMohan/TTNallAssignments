@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 6</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		button{
+		background-color: #bd8383;
+		padding: 0.3rem;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<br><br>
+<div>
+	hey i am div
+</div>
+<button id="btn">click to change</button>
+</center>
+</body>
+<script type="text/javascript">
+	$(document).ready(
+		$("#btn").click(function(){
+			var node = $("<p></p>",{text:"hey i am p tag"});
+			$("div").html(node);
+		})
+		);
+</script>
+</html>

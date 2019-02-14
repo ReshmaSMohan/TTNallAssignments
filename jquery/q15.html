@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 15</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<center>
+    <div>
+
+        <h2>Content from server</h2>
+
+    </div>
+    <br>
+    <button>click here</button>
+</center>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+ 	$("button").click(function(){
+ 	$.ajax({url: "https://jsonplaceholder.typicode.com/todos/1",success: function(result){
+ 		$("div").html(JSON.stringify(result));}
+ 		})
+ 	})
+}); 
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>change color of class</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.headnew{
+			color: green;
+		}
+		.footnew{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+<h1>Change the color of element which class name end with "-new"</h1>
+<header class="headnew">
+<div>Hey I'm Header</div>
+</header>
+<article class="article">
+<div>Hey I'm article</div>	
+</article>
+<footer class="footnew">
+<div>Hey I'm footer</div>	
+</footer>
+<br>
+<div>
+	<button id="btn">click to change color</button>
+</div>
+<script type="text/javascript">
+	$(document).ready(
+		$("#btn").click(function(){
+			$("[class$='new']").css({'color':'red'});
+		})
+		);
+</script>
+</body>
+</html>

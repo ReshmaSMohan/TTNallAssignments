@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 14</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		table{
+			border:0.5rem solid black;
+		}
+		td{
+			padding: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<center>
+<h3>Change cell color if data > 10</h3>
+<table>
+	<thead>
+		<tr>
+			<td>Name</td>
+			<td>MathsMarks</td>
+			<td>EngMarks</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Reshma</td>
+			<td>4</td>
+			<td>17</td>
+		</tr>
+		<tr>
+			<td>Rajitha</td>
+			<td>9</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Sreenath</td>
+			<td>10</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>Mahima</td>
+			<td>13</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>Pooja</td>
+			<td>10</td>
+			<td>11</td>
+		</tr>
+	</tbody>
+</table>		
+	</center>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+ 	$("td").each(function(){
+ 	var val = $(this).text();
+ 	if(parseInt(val)>10)
+ 	{	$(this).css({'color':'#650d80','background-color':'#91dc91','font-family':'bold'});
+ 	}
+ 	})
+ 	
+}); 
+</script>
+</body>
+</html>

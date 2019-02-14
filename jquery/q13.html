@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 13</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+	body{margin: 0 auto;}
+	.header{
+		height: 20vh;
+		background-color: #bd8383;
+	}
+	.article{
+		height: 30vh;
+		background-color: #bfbf5c;
+	}
+	.footer{
+		height: 10vh;
+		background-color: #6b4477;
+	}
+	#btn{
+		background-color: #bd8383;
+		padding: 0.3rem;
+	}	
+	
+	</style>
+</head>
+<body>
+<div class="header"></div>
+<div class="article"></div>
+<div class="footer"></div>
+<button id="btn">click here to find max-height element</button>
+<script type="text/javascript">
+	var node;
+	var h=0;
+	$(document).ready(function(){
+	$("#btn").click(function(){
+		$("div").each(function(){		
+ 		var val = $(this).height();
+ 		if(val>h){
+ 		 h=val;
+ 		 node=$(this)
+ 	 	}
+ 		})
+ 		node.css({'background-color':'black'});
+	})		
+});                                                                             
+</script>
+</body>
+</html>

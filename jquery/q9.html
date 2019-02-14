@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 9</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		.dropdown{
+			
+			padding: 0.6rem;
+		}
+	</style>
+</head>
+<body>
+<center>
+<h1>dropdown selected value on onchanage event</h1>
+
+<select class="dropdown" name="states">
+	<option>Jammu and Kashmir</option>
+	<option>Kerala</option>
+	<option>Uttar Pradesh</option>
+	<option>Madhya Pradesh</option>
+	<option>Rajasthan</option>
+</select>
+</center>
+<br><br>
+<div id="newdiv">
+	
+</div>
+<script type="text/javascript">
+	$(document).ready(
+	$( ".dropdown" ).change(function() {
+	var selected = $(this).find($("option:selected")).text()
+	console.log(selected)
+	document.getElementById("newdiv").innerHTML = $("#newdiv").text()+" , "+selected;
+})); 
+</script>
+</body>
+</html>

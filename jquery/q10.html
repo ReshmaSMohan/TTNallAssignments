@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 10</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			background-color:#b893c3;
+		}
+		#dropdown{
+			/*text-align: center;*/
+			color:#650d80;
+			background-color:#91dc91;
+			font-family: bold;
+			padding: 0.6rem;
+			float: left;
+		}
+		.content{
+			display: none;
+		}
+		.body{
+			padding: 0;
+			clear: left;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<nav>
+		<div id="dropdown">State
+			<div class="content">Jammu and Kashmir</div>
+			<div class="content">Kerala</div>
+			<div class="content">Uttar Pradesh</div>
+			<div class="content">Madhya Pradesh</div>
+			<div class="content">Rajasthan</div>
+		</div>
+	</nav>
+</header>
+<div class="body">
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+ 	$("#dropdown").hover(function(){
+ 		console.log("in")
+ 		$(".content").css({"display":"block","z-index":"1"})
+ 		},
+ 		function(){
+ 		console.log("out")
+ 		$(".content").css({"display":"none"})
+ 		})
+}); 
+</script>
+</body>
+</html>

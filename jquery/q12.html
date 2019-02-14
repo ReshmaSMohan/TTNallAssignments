@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 12</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Stop Event</h1>
+<div id="parent">
+	hey I'm in Parent Div tag<br>
+	<ol id="child">
+		<li>childList1</li>
+		<li>childList2</li>
+		<li>childList3</li>
+	</ol>
+</div>
+<script type="text/javascript">
+	
+ 	document.getElementById('parent').addEventListener("click",function(event){		
+ 		alert("parent clicked")},false)//true-parent,then child
+ 										//false-child, then parent
+ 	
+ 	document.getElementById('child').addEventListener("click",function(event){	
+ 		event.stopPropagation();
+ 		alert("child clicked")})
+</script>
+</body>
+</html>

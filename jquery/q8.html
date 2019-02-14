@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>question 8</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			margin: 1rem;
+		}
+	</style>
+</head>
+<body>
+<center>
+<div id="static">
+	static element
+	<br>
+</div>
+</center>
+<script type="text/javascript">
+	$(document).ready(	
+ 	$("#static").click(function(){
+ 		var node = $("<p></p>",{id:"new",text:"new p tag"})
+ 	    $("#static").after(node)
+ 	    $("#new").on("click",function(e){
+		e.stopPropagation();
+ 		alert("new click")
+ 		})
+ 	}))
+	
+</script>
+</body>
+</html>
