@@ -18,11 +18,10 @@ public enum Q9Rent {
     }
 }
 
-class Main{
+class Main {
     public static void main(String[] args) {
-        for(Q9Rent housename:Q9Rent.values())
-        {
-            System.out.println(housename+" : "+housename.getPrice());
+        for (Q9Rent housename : Q9Rent.values()) {
+            System.out.println(housename + " : " + housename.getPrice());
         }
     }
 }

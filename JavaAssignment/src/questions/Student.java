@@ -2,24 +2,39 @@ package questions;
 
 public class Student {
 
-    private static String firstname;
-    private static String lastname;
-    private static Integer age;
+    private String firstname;
+    private String lastname;
+    private Integer age;
+    static String mystaticvar="mystaticvar";
 
-    static {
-        firstname = "Reshma";
-        lastname = "Mohan";
-        age = 24;
 
-        System.out.println("Firstname : " + firstname);
-        System.out.println("Lastname : " + lastname);
-        System.out.println("Age : " + age);
+    public Student(String firstname, String lastname, Integer age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
 
-   /* public static void printDetails(){
-        System.out.println("Firstname : "+firstname);
-        System.out.println("Lastname : "+lastname);
-        System.out.println("Age : "+age);
-    }*/
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
