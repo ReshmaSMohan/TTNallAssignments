@@ -7,7 +7,5 @@ public class ICICI extends Q11Bank{
         this.noOfBranches = noOfBranches;
     }
 
-    void getDetails(){
-        System.out.println("bankName=" + bankName + " , rateOfInterest=" + rateOfInterest + " , noOfBranches=" + noOfBranches);
-    }
+
 }

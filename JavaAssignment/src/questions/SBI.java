@@ -8,8 +8,5 @@ public class SBI extends Q11Bank{
         this.noOfBranches = noOfBranches;
     }
 
-    void getDetails(){
-        System.out.println("bankName=" + bankName + " , rateOfInterest=" + rateOfInterest + " , noOfBranches=" + noOfBranches);
-    }
 
 }

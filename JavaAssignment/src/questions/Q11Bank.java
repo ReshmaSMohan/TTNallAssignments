@@ -7,6 +7,6 @@ public class Q11Bank {
 
 
     void getDetails(){
-        System.out.println("getDetails of Bank");
+        System.out.println("bankName=" + bankName + " , rateOfInterest=" + rateOfInterest + " , noOfBranches=" + noOfBranches);
     }
 }

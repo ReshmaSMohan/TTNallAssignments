@@ -17,7 +17,7 @@ public class Question4appoach2 {
                 upper++;
             else if (Character.isDigit(str.charAt(i)))
                 digit++;
-            else if ((str.charAt(i) > 31) && (str.charAt(i) < 48) || (str.charAt(i) > 90) && (str.charAt(i) < 97) || (str.charAt(i) > 57) && (str.charAt(i) < 65))
+            else //if ((str.charAt(i) > 31) && (str.charAt(i) < 48) || (str.charAt(i) > 90) && (str.charAt(i) < 97) || (str.charAt(i) > 57) && (str.charAt(i) < 65))
                 spl++;
         }
 
