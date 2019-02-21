@@ -17,6 +17,9 @@ public class Question1 {
         System.out.print("Enter the new string to be merged : ");
         newString = scanner.nextLine();
 
-        System.out.println(firstString.replaceAll(subString, newString));
+        System.out.println(firstString.replaceAll("/a.*/", newString));
+        System.out.println(firstString);
+
+        System.out.println(firstString.replace(subString, newString));
     }
 }
