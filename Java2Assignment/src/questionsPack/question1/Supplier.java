@@ -9,7 +9,7 @@ public class Supplier extends Person {
     }
 
     public void supplyBooks(){
-
+        //make new object of books type and add it
     }
 
 }
