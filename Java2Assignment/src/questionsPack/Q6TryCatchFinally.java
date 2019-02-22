@@ -11,6 +11,8 @@ public class Q6TryCatchFinally {
         System.out.println(tryCatchFinallyReturnStatemnt(10,0));
         System.out.println("=====================================================================");
         multipleCatch(10,0);
+        System.out.println("=====================================================================");
+        multiCatch(10,0);
     }
 
     public static String tryCatchReturnStatemnt(int a,int b) {
@@ -66,5 +68,29 @@ public class Q6TryCatchFinally {
         finally {
             System.out.println("Enterd finally block");
         }
+
     }
+
+    public static void multiCatch(int a,int b){
+
+        try {
+            System.out.println("Enter try block of multi catch method");
+            int c = a / b;
+//            String str=null;
+//            System.out.println(str.length());
+        }
+
+    /*  from java 7 it allows piping in catch block
+   */
+        catch (ArithmeticException |NullPointerException exception){
+            System.out.println(exception);
+        }
+
+        finally {
+            System.out.println("Enterd finally block");
+        }
+
+    }
+
+
 }
