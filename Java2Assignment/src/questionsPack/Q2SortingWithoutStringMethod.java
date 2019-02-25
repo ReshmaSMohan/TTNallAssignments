@@ -45,6 +45,5 @@ public class Q2SortingWithoutStringMethod {
         } while (index != str.length);
         System.out.println(string1);
 
-
     }
 }
