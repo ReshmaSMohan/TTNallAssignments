@@ -8,22 +8,37 @@ public class Q16Deadlock {
     Lock lock1 = new ReentrantLock(true);
     Lock lock2 = new ReentrantLock(true);
 
+    public void acquireLock(Lock lock1, Lock lock2){
+        boolean acquireLock1= lock1.tryLock();
+        boolean acquireLock2= lock2.tryLock();
+
+        if(acquireLock1 && acquireLock2){
+            return;
+        }
+
+        if(acquireLock1){
+            lock1.unlock();
+        }
+
+        if(acquireLock2){
+            lock2.unlock();
+        }
+
+    }
     public void method1(){
-        lock1.lock();
-        System.out.println("lock 1 worker 1");
-        lock2.lock();
-        System.out.println("lock 2 worker 1");
+        acquireLock(lock1,lock2);
+        System.out.println("lock 1 method 1");
+        System.out.println("lock 2 method 1");
         lock2.unlock();
         lock1.unlock();
     }
 
     public void method2(){
-        lock1.lock();
-        System.out.println("lock 1 worker 2");
-        lock2.lock();
-        System.out.println("lock 2 worker 2");
-        lock2.unlock();
+        acquireLock(lock2,lock1);
+        System.out.println("lock 1 method 2");
+        System.out.println("lock 2 method 2");
         lock1.unlock();
+        lock2.unlock();
     }
 
     public static void main(String[] args) throws InterruptedException {
