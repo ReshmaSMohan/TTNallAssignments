@@ -31,8 +31,9 @@ public class Q7Main {
 
         /*
         * when time unit is minutes all tasks are completed
+        * when time unit is milliseconds all tasks are not completed
         * */
-        executorService.awaitTermination(10L, TimeUnit.MICROSECONDS);
+        executorService.awaitTermination(10L, TimeUnit.MINUTES);
 
         if (executorService.isTerminated()) {
             System.out.println("Terminated");
