@@ -27,16 +27,18 @@ public class Q3andQ5 {
                 }
             });
 
-            System.out.println("is shutdown : "+executorService.isShutdown());
-            System.out.println("is terminated : "+executorService.isTerminated());
+            System.out.println("is shutdown in try: "+executorService.isShutdown());
+            System.out.println("is terminated in try: "+executorService.isTerminated());
         }
         finally {
-            System.out.println("is terminated : "+executorService.isTerminated());
+            System.out.println("is terminated in finally: "+executorService.isTerminated());
             executorService.shutdown();
+            System.out.println("is terminated in finally: "+executorService.isTerminated());
+
         }
 
-        System.out.println("is shutdown : "+executorService.isShutdown());
-        System.out.println("is terminated : "+executorService.isTerminated());
+        System.out.println("is shutdown in main: "+executorService.isShutdown());
+        System.out.println("is terminated in main: "+executorService.isTerminated());
 
     }
 }
