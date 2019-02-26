@@ -13,7 +13,7 @@ public class Q8 {
         Date date;
         Calendar calendar = Calendar.getInstance();
         date = calendar.getTime();
-        SimpleDateFormat format = new SimpleDateFormat("dd-MMMMM-yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd-MMMM-yyyy");
         System.out.println(format.format(date));
     }
 }
