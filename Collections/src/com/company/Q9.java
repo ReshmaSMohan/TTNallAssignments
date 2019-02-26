@@ -20,11 +20,15 @@ public class Q9 {
         System.out.println(df.format(date));
 
 
-        locale = new Locale("fr","ch");
+        locale = new Locale("fr","FR");
         df = DateFormat.getDateInstance (DateFormat.FULL, locale);
         System.out.println(df.format(date));
 
         locale = new Locale("fi","ch");
+        df = DateFormat.getDateInstance (DateFormat.FULL, locale);
+        System.out.println(df.format(date));
+
+        locale = new Locale("en", "US");
         df = DateFormat.getDateInstance (DateFormat.FULL, locale);
         System.out.println(df.format(date));
 //
