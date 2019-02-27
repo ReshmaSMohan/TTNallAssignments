@@ -1,7 +1,7 @@
 package com.company.Q7;
 
-//Design a Data Structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(),
-// isFull() and an additional operation getMin() which should return minimum element from the SpecialStack.
+//Design a Data Structure SpecialStack that supports all the stack operations like push(), pop(), isEmpty(), isFull()
+//and an additional operation getMin() which should return minimum element from the SpecialStack(Expected complexity ­ O(1))
 
 public class Q7SpecialStack {
 
@@ -28,10 +28,17 @@ public class Q7SpecialStack {
     }
 
     public Integer pop(){
+        if(stack[top]==minEle&&top!=0){
+            minEle=stack[0];
+            for(int i=0;i<top-2;i++)
+                minEle=(stack[i]<minEle)?stack[i]:minEle;
+        }
         return stack[top--];
     }
 
     public Integer peek(){
+        if(isEmpty())
+            return null;
         return stack[top];
     }
 
@@ -44,6 +51,8 @@ public class Q7SpecialStack {
     }
 
     public Integer returnMinEle(){
+        if(isEmpty())
+            return null;
         return minEle;
     }
 }
