@@ -15,8 +15,17 @@ public class Q2 {
         string=string.toLowerCase();
         HashSet hashSet = new HashSet();
         for(int i =0;i<string.length();i++){
-            if(string.charAt(i)!=' ')
-            hashSet.add(string.charAt(i));
+            //approach1 - counting repeated characters once
+            /*if(string.charAt(i)!=' ')
+            hashSet.add(string.charAt(i));*/
+
+            //approach2 - not at all counting repeated characters
+            if(string.charAt(i)!=' '){
+                if(hashSet.contains(string.charAt(i)))
+                    hashSet.remove(string.charAt(i));
+                else
+                    hashSet.add(string.charAt(i));
+            }
         }
         uniqueCharsNo=hashSet.size();
         return uniqueCharsNo;
