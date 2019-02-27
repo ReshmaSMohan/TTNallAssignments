@@ -6,23 +6,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Q12AtomicClassDemo {
     AtomicInteger sharedCount=new AtomicInteger();
 
-    public void increamentCount(){
 
-        synchronized (this){
-            sharedCount.incrementAndGet();
-        }
-    }
     public void method1(){
         for(int i=0;i<1000;i++) {
             System.out.println("method 1 : "+sharedCount);
-            increamentCount();
+            sharedCount.incrementAndGet();
         }
     }
 
     public void method2(){
         for(int i=0;i<1000;i++) {
             System.out.println("method 2 : "+sharedCount);
-            increamentCount();
+            sharedCount.incrementAndGet();
         }
     }
 }
