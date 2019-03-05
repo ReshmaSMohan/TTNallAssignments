@@ -1,4 +1,5 @@
 https://stackoverflow.com/questions/21721119/creating-runnable-jar-with-gradle
+https://docs.gradle.org/current/userguide/java_plugin.html
 
 first added java plugin,
 then create a java class named "MainClass.java"
