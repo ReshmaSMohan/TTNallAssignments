@@ -1,0 +1,8 @@
+Two sources added using the sourceset,
+this all the compiled classes will be included in jar file
+
+to check use command :
+
+jar tf build/libs/myjar.jar
+
+it show the conents of jar file.
