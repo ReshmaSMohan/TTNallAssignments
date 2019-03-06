@@ -1,0 +1,11 @@
+ Q4) find how to what is an uberjar. Make changes so you can use commons lang3 StringUtil in your jar.
+ Make this uber jar executable.
+ The output should be text but that should be using the StringUtils class of commons lang3
+
+ UberJar - fat jar
+ over-jar", one level up from a simple "jar",
+ defined as one that contains both your package and all its dependencies in one single JAR file.
+
+ Q6) Write a task in file "mytasks.gradle" and use it in your build.gradle
+
+ apply from : 'mytasks.gradle'

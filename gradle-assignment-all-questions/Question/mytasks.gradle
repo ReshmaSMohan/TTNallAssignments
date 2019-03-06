@@ -1,0 +1,3 @@
+task mytask{
+     println("my task from external .gradle file")
+}
