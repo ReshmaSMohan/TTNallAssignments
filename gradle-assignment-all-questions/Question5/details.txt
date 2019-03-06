@@ -1,0 +1,6 @@
+repo added using
+
+repositories{
+   jcenter()
+    maven{url "http://jcenter.bintray.com/"}
+}
