@@ -1,0 +1,5 @@
+ exclude('file1.txt')
+ is the statement which ignored the file1.txt during compilation.
+ Thus, ignored from the jar.
+
+ Check using :  jar tf build/libs/question3.jar
