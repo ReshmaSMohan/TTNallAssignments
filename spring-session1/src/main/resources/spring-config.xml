@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Question 1-->
+    <bean id="database" class="Question1and2.Database">
+        <property name="port" value="8080"/>
+        <property name="name" value="Oracle"/>
+    </bean>
+
+    <!-- Question 3 -->
+    <bean id="tea" class="Question3and4.Tea" primary="true"/>
+    <bean id="expresstea" class="Question3and4.ExpressTea"/>
+
+    <bean id="teaRestaurant" class="Question3and4.Restaurant">
+        <property name="hotDrink" ref="tea"/>
+    </bean>
+
+    <!-- Question 4 -->
+    <bean id="expressTeaRestaurant" class="Question3and4.Restaurant">
+        <property name="hotDrink">
+            <bean id="expresstea1" class="Question3and4.ExpressTea">
+            </bean>
+        </property>
+    </bean>
+
+    <!-- Question 5 -->
+    <bean id="complexBean" class="Question5.Complex">
+        <property name="list">
+            <list>
+                <value>reshma</value>
+                <value>reshma</value>
+                <value>reshmi</value>
+                <value>mohan</value>
+                <value>123</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>reshma</value>
+                <value>reshma</value>
+                <value>mohan</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="reshma"/>
+                <entry key="2" value="reshmi"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Question 6 -->
+
+    <!-- autowire by name -->
+    <bean id="hotDrink" class="Question6.ExpressTea"/>
+    <bean id="expressTeaRestaurantQ6" class="Question6.Restaurant" autowire="byName"/>
+
+    <!-- autowire by type -->
+    <bean id="expresstea1" class="Question6.ExpressTea"/>
+    <bean id="teaRestaurantQ6" class="Question6.Restaurant" autowire="byType"/>
+
+    <!-- autowire by construstor -->
+    <bean id="teaRestaurantQ6ByConst" class="Question6.Restaurant" autowire="constructor">
+    </bean>
+
+    <!-- Question 7 -->
+    <bean id="expressTea" class="Question7.ExpressTea" scope="prototype"/>
+
+    <bean id="res1Q8" class="Question7.Restaurant">
+        <property name="hotDrink" ref="expressTea"/>
+    </bean>
+    <bean id="res2Q8" class="Question7.Restaurant">
+        <property name="hotDrink" ref="expressTea"/>
+    </bean>
+
+    <!-- Question 8 -->
+    <!--<context:component-scan base-package="Question8and9"/>-->
+    <bean id="tea1" class="Question8and9.Tea"/>
+    <bean id="expressTea1" class="Question8and9.ExpressTea"/>
+    <bean id="restaurant" class="Question8and9.Restaurant"/>
+    <context:annotation-config/>
+
+    <!-- Question 9 -->
+    <context:component-scan base-package="Question8and9"/>
+
+</beans>
