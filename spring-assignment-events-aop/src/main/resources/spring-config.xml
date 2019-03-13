@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Question 2 -->
+    <bean class="events.CustomStartEventListener"/>
+    <bean class="events.CustomStopEventListener"/>
+    <bean class="events.CustomCloseEventListener"/>
+
+    <!-- Question 3 -->
+    <bean id="databaseQ3" class="classes.DatabaseQ3">
+        <property name="name" value="Oracle"/>
+        <property name="port" value="8080"/>
+    </bean>
+
+    <bean class="events.CustomConnectEventListener"/>
+
+    <!-- Question 4 -->
+    <bean class="classes.DatabaseQ4n5">
+        <property name="name" value="MySQL"/>
+        <property name="port" value="8080"/>
+    </bean>
+
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy/>
+
+    <bean class="aspect.LoggingAspect"/>
+
+    <!-- Question 6 -->
+    <bean class="classes.Q6IOException"/>
+
+    <!-- Question 7 -->
+    <bean id="database" class="classes.DatabaseQ7"/>
+    <bean id="database1" class="classes.DatabaseQ7"/>
+    <bean class="aspect.Question7Aspect"/>
+
+    <!-- Question 9-->
+    <bean class="aspect.Question8n9Aspect"/>
+</beans>
