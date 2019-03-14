@@ -18,12 +18,13 @@ public class Main {
         System.out.println("-------------list--------------");
         userDAO.queryForList();
 
-        //Question9
+        //Question10
         System.out.println("-------------RowMappper--------------");
         System.out.println(userDAO.getUser("poojanagarro"));
 
-        //Question10
+        //Question11
         System.out.println("-------------Hibernate--------------");
         userDAO.sessionFactoryDemo();
+
     }
 }
