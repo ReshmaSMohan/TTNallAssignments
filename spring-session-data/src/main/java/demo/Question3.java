@@ -26,15 +26,11 @@ public class Question3 {
         //dbcp2.BasicDataSource
         Connection connection = pooledSource.getConnection();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user");
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT name FROM user");
         ResultSet resultSet = preparedStatement.executeQuery();
-        System.out.println("username : password : name : age : dob");
+        System.out.println("--Name--");
         while (resultSet.next()) {
-            System.out.print(resultSet.getString("username")+" : ");
-            System.out.print(resultSet.getString("password")+" : ");
-            System.out.print(resultSet.getString("name")+" : ");
-            System.out.print(resultSet.getInt("age")+" : ");
-            System.out.print(resultSet.getDate("dob")+"\n");
+            System.out.println(resultSet.getString("name"));
         }
     }
 
