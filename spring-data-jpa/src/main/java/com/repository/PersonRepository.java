@@ -25,6 +25,10 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
     @Query("SELECT p FROM Person p where p.age=:age")
     List<Person> findInfoByAge(@Param("age") Integer age);
 
+//    Question 9
+
+    @Query("SELECT count(id) from Person where lastName='mohan'")
+    Integer findCountByName();
 
 //    Question 4
 

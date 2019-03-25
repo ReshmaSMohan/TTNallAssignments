@@ -124,6 +124,11 @@ public class PersonService {
         List<Person> personList = personRepository.findInfoByAge(age);
         System.out.println(personList);
     }
+
+    //        Question 9
+    public void findCountByName(){
+        System.out.println(personRepository.findCountByName());
+    }
 }
 
 
