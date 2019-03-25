@@ -20,7 +20,7 @@ public class Main {
 
         personService.insertPersons();
 
-        personService.findOne(4);
+/*        personService.findOne(4);
 
         personService.findAll();
 
@@ -30,6 +30,14 @@ public class Main {
 
         personService.deleteById(2);
 
-        personService.deleteAll();
+        personService.deleteAll();*/
+
+//        Question 4
+
+        personService.findByFirstName("reshma");
+
+        personService.findByLastName("mohan");
+
+        personService.findById(2);
     }
 }

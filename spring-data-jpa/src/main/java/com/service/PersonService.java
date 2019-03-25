@@ -82,4 +82,21 @@ public class PersonService {
         System.out.println(personListIterable);
     }
 
+//    Question 5
+
+    public void findByFirstName(String name){
+        System.out.println("----find by firstname----");
+        System.out.println(personRepository.findByFirstName(name));
+    }
+
+    public void findByLastName(String name){
+        System.out.println("----find by lastname----");
+        System.out.println(personRepository.findByLastName(name));
+    }
+
+    public void findById(Integer id){
+        System.out.println("----find by id----");
+        System.out.println(personRepository.findById(id));
+    }
+
 }
