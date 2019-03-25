@@ -21,7 +21,7 @@ public class PersonService {
         person.setFirstName("reshma");
         person.setLastName("mohan");
         person.setSalary(15000f);
-
+        person.setAge(24);
         personRepository.save(person);
     }
 
@@ -29,11 +29,13 @@ public class PersonService {
         Person person = new Person();
         person.setFirstName("reshmi");
         person.setLastName("mohan");
+        person.setAge(25);
         person.setSalary(5000f);
 
         Person person1 = new Person();
         person1.setFirstName("pooja");
         person1.setLastName("s");
+        person1.setAge(25);
         person1.setSalary(25000f);
 
         List<Person> personList = Arrays.asList(person, person1);
@@ -98,5 +100,15 @@ public class PersonService {
         System.out.println("----find by id----");
         System.out.println(personRepository.findById(id));
     }
+
+//    Question 6
+    public void findFirstnameByAge(Integer age){
+        List<Object[]> firstnames = personRepository.findFirstnameByAge(age);
+        Iterator firstname = firstnames.iterator();
+        while(firstname.hasNext())
+            System.out.println(firstname.next());
+    }
+
+
 
 }

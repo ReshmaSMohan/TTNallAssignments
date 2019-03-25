@@ -34,10 +34,14 @@ public class Main {
 
 //        Question 4
 
-        personService.findByFirstName("reshma");
+/*        personService.findByFirstName("reshma");
 
         personService.findByLastName("mohan");
 
-        personService.findById(2);
+        personService.findById(2);*/
+
+//        Question 6
+
+        personService.findFirstnameByAge(25);
     }
 }

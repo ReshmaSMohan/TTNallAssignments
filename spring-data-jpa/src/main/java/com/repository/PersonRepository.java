@@ -1,11 +1,19 @@
 package com.repository;
 
 import com.entity.Person;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface PersonRepository extends CrudRepository<Person,Integer> {
+
+
+//    Question 6
+
+    @Query("Select firstName from Person where age=:age")
+    List<Object[]> findFirstnameByAge(@Param("age") Integer age);
 
 //    Question 4
 
@@ -14,4 +22,7 @@ public interface PersonRepository extends CrudRepository<Person,Integer> {
     List<Person> findByLastName(String lastname);
 
     Person findById(Integer id);
+
+
+
 }
