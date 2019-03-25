@@ -20,6 +20,12 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
     @Query("SELECT firstName, lastName from Person where age=:age")
     List<Object[]> findFirstNameAndLastNameByAge(@Param("age") Integer age);
 
+//    Question 8
+
+    @Query("SELECT p FROM Person p where p.age=:age")
+    List<Person> findInfoByAge(@Param("age") Integer age);
+
+
 //    Question 4
 
     Person findByFirstName(String firstname);
