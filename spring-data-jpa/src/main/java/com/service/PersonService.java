@@ -109,6 +109,16 @@ public class PersonService {
             System.out.println(firstname.next());
     }
 
+//    Question 7
+    public void findFirstnameAndLastNameByAge(Integer age){
+        List<Object[]> names = personRepository.findFirstNameAndLastNameByAge(age);
+        Iterator<Object[]> name = names.iterator();
+        while(name.hasNext()){
+            Object[] object = name.next();
+            System.out.println(object[0]+" : "+object[1]);
+        }
+    }
+
 
 
 }

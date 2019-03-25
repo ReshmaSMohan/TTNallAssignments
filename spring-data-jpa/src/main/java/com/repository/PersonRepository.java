@@ -7,13 +7,18 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PersonRepository extends CrudRepository<Person,Integer> {
+public interface PersonRepository extends CrudRepository<Person, Integer> {
 
 
 //    Question 6
 
     @Query("Select firstName from Person where age=:age")
     List<Object[]> findFirstnameByAge(@Param("age") Integer age);
+
+//    Question 7
+
+    @Query("SELECT firstName, lastName from Person where age=:age")
+    List<Object[]> findFirstNameAndLastNameByAge(@Param("age") Integer age);
 
 //    Question 4
 
@@ -22,7 +27,6 @@ public interface PersonRepository extends CrudRepository<Person,Integer> {
     List<Person> findByLastName(String lastname);
 
     Person findById(Integer id);
-
 
 
 }

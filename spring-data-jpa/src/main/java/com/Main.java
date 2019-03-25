@@ -42,6 +42,14 @@ public class Main {
 
 //        Question 6
 
+/*
         personService.findFirstnameByAge(25);
+*/
+
+//        Question 7
+
+        personService.findFirstnameAndLastNameByAge(25);
+
+
     }
 }
