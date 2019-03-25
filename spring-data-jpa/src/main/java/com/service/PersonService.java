@@ -1,0 +1,85 @@
+package com.service;
+
+import com.entity.Person;
+import com.repository.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+@Component
+public class PersonService {
+
+    @Autowired
+    PersonRepository personRepository;
+
+    public void insertPerson() {
+        Person person = new Person();
+        person.setFirstName("reshma");
+        person.setLastName("mohan");
+        person.setSalary(15000f);
+
+        personRepository.save(person);
+    }
+
+    public void insertPersons() {
+        Person person = new Person();
+        person.setFirstName("reshmi");
+        person.setLastName("mohan");
+        person.setSalary(5000f);
+
+        Person person1 = new Person();
+        person1.setFirstName("pooja");
+        person1.setLastName("s");
+        person1.setSalary(25000f);
+
+        List<Person> personList = Arrays.asList(person, person1);
+
+        personRepository.save(personList);
+
+//        personRepository.delete(person);
+//        personRepository.delete(personList);
+
+    }
+
+    public void findOne(Integer id) {
+        if (personRepository.exists(id)) {
+            Person person = personRepository.findOne(id);
+            System.out.println(person);
+        } else
+            System.out.println("Id not exists");
+    }
+
+    public void findAll(){
+        Iterable<Person> personListIterable = personRepository.findAll();
+        System.out.println("Find all -- "+personListIterable);
+    }
+
+    public void findAllUsingIds(){
+        List ids = Arrays.asList(1,2);
+        Iterable<Person> personListIterable =personRepository.findAll(ids);
+        System.out.println("Using ids -- "+personListIterable);
+    }
+
+    public void count(){
+        System.out.println("Count -- "+personRepository.count());
+    }
+
+    public void deleteById(Integer id){
+        personRepository.delete(id);
+        System.out.println("----------After deletion----------");
+        Iterable<Person> personListIterable = personRepository.findAll();
+        System.out.println(personListIterable);
+    }
+
+    public void deleteAll(){
+        personRepository.deleteAll();
+        System.out.println("----------After delete all----------");
+        Iterable<Person> personListIterable = personRepository.findAll();
+        System.out.println(personListIterable);
+    }
+
+}
