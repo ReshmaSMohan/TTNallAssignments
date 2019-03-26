@@ -3,6 +3,7 @@ package com.service;
 import com.entity.Person;
 import com.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -132,8 +133,9 @@ public class PersonService {
 
     //        Question 11
     public void findByAgeGreaterThanAndSort(){
-        System.out.println(personRepository.findByAgeGreaterThanOrderByAgeDesc(20));
+        System.out.println(personRepository.findByAgeGreaterThanOrderByIdDesc(20));
     }
+
 }
 
 

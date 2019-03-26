@@ -1,6 +1,7 @@
 package com.repository;
 
 import com.entity.Person;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -40,7 +41,8 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
 //    Question 11
 
-    List<Person> findByAgeGreaterThanOrderByAgeDesc(Integer age);
+    List<Person> findByAgeGreaterThanOrderByIdDesc(Integer age);
+
 
 
 }
