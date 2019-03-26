@@ -57,8 +57,12 @@ public class Main {
 */
 
 //        Question 9
+/*
 
         personService.findCountByName();
+*/
 
+//        Question 11
+        personService.findByAgeGreaterThanAndSort();
     }
 }

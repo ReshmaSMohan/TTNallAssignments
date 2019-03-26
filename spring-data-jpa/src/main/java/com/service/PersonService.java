@@ -129,6 +129,11 @@ public class PersonService {
     public void findCountByName(){
         System.out.println(personRepository.findCountByName());
     }
+
+    //        Question 11
+    public void findByAgeGreaterThanAndSort(){
+        System.out.println(personRepository.findByAgeGreaterThanOrderByAgeDesc(20));
+    }
 }
 
 

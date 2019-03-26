@@ -39,7 +39,7 @@ public class PersistenceContext {
         Properties jpaProperties= new Properties();
         jpaProperties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
         jpaProperties.setProperty("hibernate.show_sql","false");
-        jpaProperties.setProperty("hibernate.hbm2ddl.auto","update");
+        jpaProperties.setProperty("hibernate.hbm2ddl.auto","create");
 
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
         return entityManagerFactoryBean;
