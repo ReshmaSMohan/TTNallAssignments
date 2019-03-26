@@ -3,9 +3,12 @@ package com.service;
 import com.entity.Person;
 import com.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
+import javax.management.Query;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -139,6 +142,17 @@ public class PersonService {
     //       Question 12
     public void findByAgeGreaterThanAndSortUsingClass(){
         System.out.println(personRepository.findByAgeGreaterThan(20,new Sort(Sort.Direction.DESC,"age")));
+    }
+
+    //       Question 13
+    public void findAllByPagination(){
+        Page<Person> personPage = personRepository.findAll(new PageRequest(0,2));
+        List<Person> personList = personPage.getContent();
+        System.out.println("Page 0 : "+personList);
+
+        personPage = personRepository.findAll(new PageRequest(1,2));
+        personList = personPage.getContent();
+        System.out.println("Page 1 : "+personList);
     }
 }
 
