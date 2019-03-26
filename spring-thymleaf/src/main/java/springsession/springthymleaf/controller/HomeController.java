@@ -11,5 +11,8 @@ public class HomeController {
         return "question1";
     }
 
-
+    @RequestMapping(value = "/q2")
+    public String question2(){
+        return "question2";
+    }
 }
