@@ -136,6 +136,10 @@ public class PersonService {
         System.out.println(personRepository.findByAgeGreaterThanOrderByIdDesc(20));
     }
 
+    //       Question 12
+    public void findByAgeGreaterThanAndSortUsingClass(){
+        System.out.println(personRepository.findByAgeGreaterThan(20,new Sort(Sort.Direction.DESC,"age")));
+    }
 }
 
 

@@ -43,6 +43,9 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findByAgeGreaterThanOrderByIdDesc(Integer age);
 
+//    Question 12
+
+    List<Person> findByAgeGreaterThan(Integer age,Sort sort);
 
 
 }

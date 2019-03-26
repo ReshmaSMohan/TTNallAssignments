@@ -63,6 +63,11 @@ public class Main {
 */
 
 //        Question 11
+/*
         personService.findByAgeGreaterThanAndSort();
+*/
+
+//        Question 12
+        personService.findByAgeGreaterThanAndSortUsingClass();
     }
 }
