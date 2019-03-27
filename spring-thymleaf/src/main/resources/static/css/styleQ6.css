@@ -1,0 +1,19 @@
+body{
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+}
+#header{
+    background-color: black;
+    color: antiquewhite;
+    height: 5rem;
+}
+
+#footer{
+    position: absolute;
+    background-color: black;
+    color: antiquewhite;
+    width: 100vw;
+    height: 5rem;
+    bottom: 0;
+}

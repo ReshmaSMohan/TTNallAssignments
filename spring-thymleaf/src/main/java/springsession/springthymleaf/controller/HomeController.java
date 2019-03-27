@@ -104,9 +104,9 @@ public class HomeController {
         if(user.isPresent())
         {
             if(user.get().getAdmin())
-                msg="Welcome admin : "+user.get().getName();
+                msg="Hello admin : "+user.get().getName();
             else
-                msg="Welcome user : "+user.get().getName();
+                msg="Hello user : "+user.get().getName();
         }
         return msg;
     }

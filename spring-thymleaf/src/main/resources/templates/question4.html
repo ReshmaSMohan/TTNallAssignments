@@ -6,9 +6,12 @@
     <style>
         td{border: 1px black solid;}
     </style>
+    <link th:href="@{/css/styleQ6.css}" rel="stylesheet"/>
 </head>
 <body>
-<br>
+
+<!-- Question 6 -->
+<div th:replace="q6fragment::#header"></div>
 <center>
     <table>
         <tr>
@@ -23,5 +26,8 @@
         </tr>
     </table>
 </center>
+
+<div th:replace="q6fragment::#footer"></div>
+
 </body>
 </html>
