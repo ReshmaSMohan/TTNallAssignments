@@ -13,7 +13,6 @@ import springsession.springthymleaf.repository.EmployeeRepository;
 import springsession.springthymleaf.repository.UserRepository;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Optional;
 
@@ -80,7 +79,7 @@ public class HomeController {
 
     @RequestMapping("/saveUsersForQ5")
     @ResponseBody
-    public void saveUserQ4(){
+    public void saveUserQ5(){
         User user = new User();
         user.setName("reshma");
         user.setEmail("reshma@mail.com");
@@ -91,6 +90,16 @@ public class HomeController {
         user1.setEmail("poojas@gmail.com");
         user1.setAdmin(false);
         userRepository.save(user1);
+        User user2 = new User();
+        user2.setName("mahima");
+        user2.setEmail("mahi@gmail.com");
+        user2.setAdmin(false);
+        userRepository.save(user2);
+        User user3 = new User();
+        user3.setName("anu");
+        user3.setEmail("anu@gmail.com");
+        user3.setAdmin(false);
+        userRepository.save(user3);
     }
 
     @RequestMapping("/q5")
@@ -125,6 +134,14 @@ public class HomeController {
     @ResponseBody
     public String getTime(){
         return new Date().toLocaleString();
+    }
+
+//    Question 8
+
+    @RequestMapping("/q8")
+    public String question8(Model model){
+        model.addAttribute("users", userRepository.findAll());
+        return "question8";
     }
 
 }
