@@ -22,7 +22,14 @@
         });
     </script>
     <script th:src="@{/js/scriptQ10.js}"></script>
-
+    <style>
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,12 +41,14 @@
     <br>
     <button id="register" type="submit">submit</button>
 </form>
-<br><br>
-<center>
-    <div id="loading">
-        <img src="images/loader.gif" alt="loading">
-    </div>
-</center>
+
+<div id="loading">
+    <img src="images/loader.gif" alt="loading">
+</div>
+
+<div>
+<h1 id="msg"></h1>
+</div>
 
 </body>
 </html>

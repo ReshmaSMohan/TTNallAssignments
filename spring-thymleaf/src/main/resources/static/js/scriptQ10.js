@@ -9,7 +9,8 @@ function myfunction(formData) {
     register.done(
         function (data) {
             console.log(data);
-            $("#loading").text(data+" registered");
+            $("#loading").hide();
+            $("#msg").text(data+" registered");
 
         }
     );
