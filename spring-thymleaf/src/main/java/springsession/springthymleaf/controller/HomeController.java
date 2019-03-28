@@ -154,4 +154,19 @@ public class HomeController {
         return msg;
     }
 
+//    Question 10
+    @RequestMapping("/q10")
+    public String question10(){
+        return "question10";
+    }
+
+    @PostMapping("/registerEmployee")
+    @ResponseBody
+    public String registerEmployee(@ModelAttribute Employee employee) throws InterruptedException {
+        Thread.sleep(1000L);
+        //employeeRepository.save(employee);
+        //return String.valueOf(employeeRepository.findById(employee.getId()));
+        return employee.getName();
+    }
+
 }
