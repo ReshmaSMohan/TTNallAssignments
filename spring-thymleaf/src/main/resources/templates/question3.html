@@ -6,10 +6,16 @@
 </head>
 <body>
 
-<center>
+<!--<center>
     <div th:text =" 'Hey : '+ ${name}"></div>
     <div th:text =" 'Id : '+ ${id}"></div>
     <div th:text =" 'Email : '+ ${email}"></div>
+</center>-->
+
+<center>
+    <div th:text =" 'Hey : '+ ${user.name}"></div>
+    <div th:text =" 'Id : '+ ${user.id}"></div>
+    <div th:text =" 'Email : '+ ${user.email}"></div>
 </center>
 
 </body>

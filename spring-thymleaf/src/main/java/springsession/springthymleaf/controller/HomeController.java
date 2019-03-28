@@ -36,20 +36,23 @@ public class HomeController {
 
     //    Question 3
     @RequestMapping(value = "/q3")
-    public String question3() {
+    public String question3(Model model) {
+        User user = new User();
+        model.addAttribute(user);
         return "q3form";
     }
 
     @RequestMapping(value = "/formAction", method = RequestMethod.POST)
-    public String question3Action(HttpServletRequest httpServletRequest, Model model) {
+    public String question3Action(User user,/*HttpServletRequest httpServletRequest,*/ Model model) {
 
-        String id = httpServletRequest.getParameter("empId");
+       /* String id = httpServletRequest.getParameter("empId");
         String name = httpServletRequest.getParameter("empName");
         String email = httpServletRequest.getParameter("empMail");
 
         model.addAttribute("id", id);
         model.addAttribute("name", name);
-        model.addAttribute("email", email);
+        model.addAttribute("email", email);*/
+       model.addAttribute(user);
         return "question3";
     }
 
