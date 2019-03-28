@@ -3,10 +3,7 @@ package springsession.springthymleaf.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import springsession.springthymleaf.entity.Employee;
 import springsession.springthymleaf.entity.User;
 import springsession.springthymleaf.repository.EmployeeRepository;
@@ -142,6 +139,19 @@ public class HomeController {
     public String question8(Model model){
         model.addAttribute("users", userRepository.findAll());
         return "question8";
+    }
+
+//    Question 9
+    @RequestMapping("/q9")
+    public String question9(){
+        return "question9";
+    }
+
+    @RequestMapping(value = "/getMsgQ9")
+    @ResponseBody
+    public String question9SetMsg(@RequestParam String type){
+        String msg = "Hello : "+type.toLowerCase();
+        return msg;
     }
 
 }
