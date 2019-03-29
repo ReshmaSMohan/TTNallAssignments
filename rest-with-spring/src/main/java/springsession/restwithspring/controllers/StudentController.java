@@ -2,6 +2,7 @@ package springsession.restwithspring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.bind.annotation.*;
 import springsession.restwithspring.entities.Student;
 import springsession.restwithspring.exceptions.StudentNotFoundException;
@@ -22,10 +23,10 @@ public class StudentController {
     MessageSource messageSource;
 
     @GetMapping("/")
-    String helloWorld(@RequestHeader(name = "Accept-Language",required = false) Locale locale){
+  String helloWorld(){
         System.out.println("hello world");
-        System.out.println(locale.getLanguage());
-        return messageSource.getMessage("good.morning.message",null,locale);
+        System.out.println(LocaleContextHolder.getLocale());
+        return messageSource.getMessage("good.morning.message",null,LocaleContextHolder.getLocale());
     }
 
     @GetMapping("/students")
@@ -46,7 +47,7 @@ public class StudentController {
         return student;
     }
 
-    @PostMapping("/students")
+    @PostMapping(value = "/students",produces = "application/xml")
     Student saveStudent(@Valid @RequestBody Student student) {
         studentService.saveStudent(student);
         return studentService.getStudentById(student.getId());
