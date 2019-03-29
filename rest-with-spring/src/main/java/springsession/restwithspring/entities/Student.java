@@ -1,5 +1,7 @@
 package springsession.restwithspring.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,7 @@ public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore //Question 6
     private Integer id;
 
     @Size(min = 3 ,message = "Name should have at least 5 characters")
