@@ -8,6 +8,9 @@ public class CustomExceptionResponse {
     private String message;
     private String details;
 
+    public CustomExceptionResponse() {
+    }
+
     public CustomExceptionResponse(Date timestamp, String message, String details) {
         this.timestamp = timestamp;
         this.message = message;
