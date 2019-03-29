@@ -3,6 +3,7 @@ package springsession.restwithspring.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springsession.restwithspring.entities.Student;
+import springsession.restwithspring.exceptions.StudentNotFoundException;
 import springsession.restwithspring.services.StudentService;
 
 import java.util.List;
@@ -15,17 +16,25 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping("/students")
-    List<Student> getStudents(){
+    List<Student> getStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping("/students/{id}")
-    Student getStudentById(@PathVariable Integer id){
-        return studentService.getStudentById(id);
+    Student getStudentById(@PathVariable Integer id) throws StudentNotFoundException {
+
+        Student student = studentService.getStudentById(id);
+
+        //Question 2
+
+        if (student == null) {
+            throw new StudentNotFoundException("Student not found");
+        }
+        return student;
     }
 
     @PostMapping("/students")
-    Student saveStudent(@RequestBody Student student){
+    Student saveStudent(@RequestBody Student student) {
         studentService.saveStudent(student);
         return studentService.getStudentById(student.getId());
     }
